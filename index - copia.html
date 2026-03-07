@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>TikTok Story Generator</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+text-align:center;
+padding:40px;
+}
+
+.container{
+background:white;
+max-width:700px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:12px 20px;
+background:#6C63FF;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+}
+
+#story{
+margin-top:20px;
+padding:20px;
+background:#eee;
+}
+
+.lang{
+cursor:pointer;
+margin:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="title">TikTok Story Generator</h1>
+
+<div>
+<span class="lang" onclick="setLang('en')">EN</span> |
+<span class="lang" onclick="setLang('es')">ES</span>
+</div>
+
+<input id="topic" placeholder="Topic">
+
+<select id="genre">
+<option>Horror</option>
+<option>Fantasy</option>
+<option>Romance</option>
+<option>Sci-Fi</option>
+</select>
+
+<input id="characters" placeholder="Characters">
+
+<button onclick="generate()">Generate Story</button>
+
+<div id="story">
+Your story will appear here...
+</div>
+
+</div>
+
+<script>
+
+function generate(){
+
+let topic=document.getElementById("topic").value
+let genre=document.getElementById("genre").value
+let characters=document.getElementById("characters").value
+
+let story=""
+
+story="A short "+genre+" TikTok story: "+characters+
+" characters discover something related to "+topic+
+". What starts normal quickly turns into an unexpected twist."
+
+document.getElementById("story").innerText=story
+
+}
+
+function setLang(lang){
+
+if(lang=="es"){
+
+document.getElementById("title").innerText="Generador de Historias para TikTok"
+
+}
+
+if(lang=="en"){
+
+document.getElementById("title").innerText="TikTok Story Generator"
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
